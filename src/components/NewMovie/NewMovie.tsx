@@ -24,8 +24,8 @@ export const NewMovie: React.FC<Props> = ({ setMovies, onAdd }) => {
     title.trim() && imgUrl.trim() && imdbUrl.trim() && imdbId.trim(),
   );
 
-  const handleSubmit: React.FormEventHandler<HTMLFormElement> = e => {
-    e.preventDefault();
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = event => {
+    event.preventDefault();
 
     if (!isFormValid) {
       return;
@@ -53,7 +53,7 @@ export const NewMovie: React.FC<Props> = ({ setMovies, onAdd }) => {
     setImdbUrl('');
     setImdbId('');
 
-    setCount(c => c + 1);
+    setCount(currentCount => currentCount + 1);
   };
 
   return (
